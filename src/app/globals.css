@@ -1,21 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.w-1404 {
+  @apply w-[1404px];
+}
+
+.grid-cols-1404 {
+  @apply grid-cols-[1404px];
+}
+
+.grid-rows-84 {
+  @apply grid-rows-[84px];
+}
+
+.grid-rows-248-810 {
+  @apply grid-rows-[248px_810px];
+}
+
+.px-18 {
+  @apply px-[18px];
+}
+
+.pt-18 {
+  @apply pt-[18px];
+}
+
+.mr-20 {
+  @apply mr-[20px];
+}
+
+.gap-7 {
+  @apply gap-[7px];
 }
