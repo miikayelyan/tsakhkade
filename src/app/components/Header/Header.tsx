@@ -16,8 +16,6 @@ export default function Header() {
       setLastScrollY(currentScrollY);
     };
 
-    console.log("useEffect trigger");
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
