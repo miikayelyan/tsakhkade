@@ -72,7 +72,7 @@ export default function OurStory() {
                 className="h-[40px] order-3 w-[160px] border border-grayCustom text-black flex items-center justify-center"
                 initial={{ backgroundColor: "#ffffff", color: "#000000" }}
                 whileHover={{ backgroundColor: "#000000", color: "#ffffff" }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.3 }}
               >
                 <Link href="#">
                   <span className="flex basis-auto flex-grow truncate w-[158px] h-[38px] justify-center items-center">
