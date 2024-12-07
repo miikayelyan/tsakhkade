@@ -1,8 +1,7 @@
+"use client";
+
 import Link from "next/link";
 import { MouseEvent } from "react";
-import smoothscroll from "smoothscroll-polyfill";
-
-smoothscroll.polyfill();
 
 export const scrollToTop = (
   e: MouseEvent<HTMLAnchorElement> | MouseEvent<HTMLDivElement>
