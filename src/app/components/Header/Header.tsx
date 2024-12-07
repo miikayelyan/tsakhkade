@@ -1,9 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import HotelName from "./HotelName/HotelName";
 import HotelLogo from "./HotelLogo/HotelLogo";
 import CtaContainer from "./CtaContainer/CtaContainer";
+import dynamic from "next/dynamic";
+
+const HotelName = dynamic(() => import("./HotelName/HotelName"), {
+  ssr: false,
+});
 
 export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
