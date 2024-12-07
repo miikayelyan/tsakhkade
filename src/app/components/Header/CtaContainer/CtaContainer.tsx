@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Hamburger from "hamburger-react";
 import CustomButton from "../../CustomButton/CustomButton";

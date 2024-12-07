@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { MouseEvent } from "react";
 
@@ -7,6 +6,7 @@ export const scrollToTop = (
   e: MouseEvent<HTMLAnchorElement> | MouseEvent<HTMLDivElement>
 ) => {
   e.preventDefault();
+  console.log(window);
   window.scrollTo({
     top: 0,
     behavior: "smooth",
