@@ -26,7 +26,6 @@ export default function Header() {
       animate={{ y: isHidden ? -84 : 0 }}
       transition={{ type: "tween", duration: 0.4 }}
       className="fixed w-full z-20 bg-white border-b border-black"
-      aria-hidden
     >
       <div className="grid grid-cols-[33.3%_33.3%_33.3%] grid-rows-[84px]">
         <HotelName />

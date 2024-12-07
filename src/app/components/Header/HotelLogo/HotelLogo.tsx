@@ -1,8 +1,8 @@
-import React from "react";
+import { scrollToTop } from "../HotelName/HotelName";
 
-function HotelLogo() {
+export default function HotelLogo() {
   return (
-    <div className="flex justify-center p-[18px]">
+    <div className="flex justify-center p-[18px]" onClick={scrollToTop}>
       <svg
         preserveAspectRatio="xMidYMid meet"
         data-bbox="46.8 20 106.4 160"
@@ -40,5 +40,3 @@ function HotelLogo() {
     </div>
   );
 }
-
-export default HotelLogo;
