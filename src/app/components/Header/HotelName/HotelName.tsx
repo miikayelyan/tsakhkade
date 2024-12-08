@@ -6,12 +6,13 @@ export const scrollToTop = (
   e: MouseEvent<HTMLAnchorElement> | MouseEvent<HTMLDivElement>
 ) => {
   e.preventDefault();
-  if (typeof window !== "undefined") {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+
+  if (typeof window === "undefined") return;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 };
 
 export default function HotelName() {

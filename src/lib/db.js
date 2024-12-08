@@ -5,13 +5,12 @@
 
 //   try {
 //     await client.sql`
-//       DO $$
-//       BEGIN
-//         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typename = 'availability_status') THEN
-//           CREATE TABLE availability_status AS ENUM('Available', 'Booked', 'Under Maintenance');
-//         END IF;
-//       END$$;
-//     `;
+//      DO $$
+//      BEGIN
+//        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'availability_status') THEN
+//          CREATE TYPE availability_status AS ENUM ('Available', 'Booked', 'Under Maintenance');
+//        END IF;
+//      END $$;
 
 //     await client.sql`
 //       CREATE TABLE IF NOT EXISTS Rooms (
