@@ -1,4 +1,5 @@
 "use client";
+
 import { scrollToTop } from "../HotelName/HotelName";
 
 export default function HotelLogo() {
