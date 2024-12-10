@@ -3,19 +3,13 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import HotelLogo from "./HotelLogo/HotelLogo";
 import CtaContainer from "./CtaContainer/CtaContainer";
-import dynamic from "next/dynamic";
-
-const HotelName = dynamic(() => import("./HotelName/HotelName"), {
-  ssr: false,
-});
+import HotelName from "./HotelName/HotelName";
 
 export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsHidden(currentScrollY > lastScrollY);
