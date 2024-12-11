@@ -10,13 +10,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({ title, textStyles, containerStyles }) => (
-  <motion.div
-    className={`flex w-40 text-black ${containerStyles}`}
-    whileHover={{
-      textDecoration: "underline",
-    }}
-    transition={{ duration: 0.3 }}
-  >
+  <motion.div className={`flex w-40 text-black ${containerStyles}`}>
     <Link href="#">
       <div className="flex w-full h-full justify-center items-center">
         <span

@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Button from "../Button/Button";
 
 export default function OurStory() {
   const targetRef = useRef(null);
@@ -69,38 +70,10 @@ export default function OurStory() {
                 </p>
               </div>
 
-              <motion.div
-                className="h-[40px] order-3 w-[160px] border border-grayCustom text-black flex items-center justify-center"
-                initial={{ backgroundColor: "#ffffff", color: "#000000" }}
-                whileHover={{ backgroundColor: "#000000", color: "#ffffff" }}
-                transition={{ duration: 0.3 }}
-              >
-                <Link href="#">
-                  <span className="flex basis-auto flex-grow truncate w-[158px] h-[38px] justify-center items-center">
-                    <span className="text-base italic mr-[4px] text-center leading-[22.4px] h-[22.3984px]">
-                      Read More
-                    </span>
-                    <span className="ml-1">
-                      <motion.svg
-                        style={{ fill: "currentcolor" }}
-                        initial={{ rotate: 0 }}
-                        whileHover={{ rotate: 30 }}
-                        transition={{ duration: 0.2, ease: "easeInOut" }}
-                        data-bbox="30.718 20 138.564 160"
-                        viewBox="0 0 200 200"
-                        height="16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                        data-type="shape"
-                      >
-                        <g>
-                          <path d="M30.718 20l138.564 80-138.564 80 53.417-80.027L30.718 20z"></path>
-                        </g>
-                      </motion.svg>
-                    </span>
-                  </span>
-                </Link>
-              </motion.div>
+              <Button
+                title="Read More"
+                containerStyles="h-10 border border-grayCustom items-center justify-center"
+              />
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function Header() {
       transition={{ type: "tween", duration: 0.4 }}
       className="fixed w-full z-20 bg-white border-b border-black"
     >
-      <div className="grid grid-cols-[33.3%_33.3%_33.3%] grid-rows-[84px]">
+      <div className="grid grid-cols-3 grid-rows-[84px]">
         <HotelName />
         <HotelLogo />
         <CtaContainer />

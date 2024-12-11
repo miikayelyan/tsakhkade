@@ -15,10 +15,10 @@ export const scrollToTop = (
 
 export default function HotelName() {
   return (
-    <div className="flex items-center h-[84px] pr-[18px] py-[18px] pl-9">
+    <div className="flex items-center pr-4 py-4 pl-9">
       <Link
-        className="w-fit no-underline text-black font-light"
-        href="#"
+        className="w-fit no-underline font-light"
+        href="/"
         onClick={scrollToTop}
         aria-label="Navigate to the Tsakhkadé homepage"
       >

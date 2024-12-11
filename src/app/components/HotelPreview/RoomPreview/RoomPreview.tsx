@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../../Button/Button";
 
 function RoomPreview() {
   return (
@@ -14,7 +15,7 @@ function RoomPreview() {
               src="https://static.wixstatic.com/media/c837a6_96fae0e0e61c4da7b15488f2ab2c7538~mv2.jpg/v1/fill/w_1642,h_936,fp_0.86_0.49,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/The_Executive_01.jpg"
               width={821}
               height={468}
-              alt="The Executive"
+              alt="Executive Room with King-size Bed"
             />
           </div>
           <div className="flex flex-col h-[293.648px] order-2 w-[547.195px]">
@@ -66,29 +67,7 @@ function RoomPreview() {
                   </div>
                 </div>
               </div>
-              <div className="w-[160px]">
-                <Link
-                  className="flex gap-[7px] w-fit items-center no-underline text-black text-base italic"
-                  href="#"
-                  aria-label="Book The Executive Room Now"
-                >
-                  Book Now
-                  <div>
-                    <svg
-                      data-bbox="30.718 20 138.564 160"
-                      viewBox="0 0 200 200"
-                      height="16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                      data-type="shape"
-                    >
-                      <g>
-                        <path d="M30.718 20l138.564 80-138.564 80 53.417-80.027L30.718 20z"></path>
-                      </g>
-                    </svg>
-                  </div>
-                </Link>
-              </div>
+              <Button title="Book Now" textStyles="italic" />
             </div>
           </div>
         </div>

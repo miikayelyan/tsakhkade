@@ -4,7 +4,7 @@ import { scrollToTop } from "../HotelName/HotelName";
 
 export default function HotelLogo() {
   return (
-    <div className="flex justify-center p-[18px]" onClick={scrollToTop}>
+    <div className="flex justify-center p-4" onClick={scrollToTop}>
       <svg
         preserveAspectRatio="xMidYMid meet"
         data-bbox="46.8 20 106.4 160"
