@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function HotelLogo() {
   const redirectOrScroll = useRedirectOrScroll();
   return (
-    <div className="flex justify-center p-4" onClick={redirectOrScroll}>
-      <Link href="/">
+    <div className="flex justify-center p-4">
+      <Link href="/" onClick={redirectOrScroll}>
         <svg
           preserveAspectRatio="xMidYMid meet"
           data-bbox="46.8 20 106.4 160"
