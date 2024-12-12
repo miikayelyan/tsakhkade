@@ -1,29 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { MouseEvent } from "react";
+import { FC } from "react";
+import useRedirectOrScroll from "@/app/hooks/useRedirectOrScroll";
 
-export const scrollToTop = (
-  e: MouseEvent<HTMLAnchorElement> | MouseEvent<HTMLDivElement>
-) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
-
-export default function HotelName() {
+const HotelName: FC = () => {
+  const redirectOrScroll = useRedirectOrScroll();
   return (
     <div className="flex items-center pr-4 py-4 pl-9">
       <Link
-        className="w-fit no-underline font-light"
         href="/"
-        onClick={scrollToTop}
+        onClick={redirectOrScroll}
         aria-label="Navigate to the Tsakhkadé homepage"
+        className="w-fit no-underline font-light"
       >
         The Tsakhkade
       </Link>
     </div>
   );
-}
+};
+
+export default HotelName;
