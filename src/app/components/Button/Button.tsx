@@ -1,25 +1,35 @@
 "use client";
 import { FC } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-interface ButtonProps {
+interface CustomButtonProps {
   title: string;
+  onClick?: () => void;
   containerStyles?: string;
   textStyles?: string;
 }
 
-const Button: FC<ButtonProps> = ({ title, textStyles, containerStyles }) => (
-  <motion.div className={`flex w-40 text-black ${containerStyles}`}>
+type ButtonProps = CustomButtonProps & HTMLMotionProps<"div">;
+
+const Button: FC<ButtonProps> = ({
+  title,
+  textStyles,
+  containerStyles,
+  ...motionProps
+}) => (
+  <motion.div
+    {...motionProps}
+    className={`flex w-40 text-black ${containerStyles}`}
+  >
     <Link href="#">
-      <div className="flex w-full h-full justify-center items-center">
-        <span
-          className={`text-base mr-1 text-center leading-[22.4px] ${textStyles}`}
-        >
+      <div className="flex justify-center items-center">
+        <span className={`text-base mr-1 text-center italic ${textStyles}`}>
           {title}
         </span>
         <motion.svg
           className="ml-1"
+          style={{ fill: "currentcolor" }}
           initial={{ rotate: 0 }}
           whileHover={{ rotate: 30 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}

@@ -9,8 +9,8 @@ function CtaContainer() {
     <div className="flex justify-end items-center gap-4 pr-5 py-4 pl-4">
       <Button
         title="Book Now"
-        containerStyles="justify-end min-w-[82px] hover:underline"
-        textStyles="italic"
+        containerStyles="justify-end min-w-[82px]"
+        textStyles="hover:underline"
       />
       <div className="min-w-10">
         <Hamburger size={24} aria-label="Toggle menu" />

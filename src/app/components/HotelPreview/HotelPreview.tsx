@@ -7,8 +7,8 @@ import RoomPreview from "./RoomPreview/RoomPreview";
 
 export default function HotelPreview() {
   return (
-    <section className="flex flex-col col-start-1 row-start-3 col-end-2 row-end-4">
-      <div className="px-[18px] pb-[72px] grid flex-grow grid-cols-[1404px] grid-rows-[503.984px_504.656px_504.656px] gap-y-[72px]">
+    <section>
+      <div className="px-4 pb-20 grid grid-cols-[1404px] grid-rows-3 gap-y-8">
         <div className="flex flex-col col-start-1 row-start-1 col-end-1 row-end-1 sticky top-[110px] w-full">
           <div className="grid flex-grow grid-cols-[1368px] grid-rows-[431.984px] px-[18px] py-9">
             <div className="flex flex-col row-start-1 col-start-1 row-end-2 col-end-2 self-center justify-self-center w-[769.5px]">
