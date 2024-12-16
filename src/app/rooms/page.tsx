@@ -1,7 +1,7 @@
-import { FC } from "react";
+import React from "react";
 
-const Rooms: FC = () => {
-  return <div>Here will be shown rooms!</div>;
+const page = () => {
+  return <div>Page</div>;
 };
 
-export default Rooms;
+export default page;
