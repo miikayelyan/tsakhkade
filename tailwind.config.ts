@@ -12,6 +12,7 @@ export default {
         grayCustom: "rgb(112, 112, 112)",
         cardBg: "#f0f0f0",
         descGapBg: "#d0c9c0",
+        auraBg: "rgb(208, 201, 192)",
       },
     },
   },

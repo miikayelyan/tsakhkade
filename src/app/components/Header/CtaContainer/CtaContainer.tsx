@@ -1,10 +1,15 @@
 "use client";
 
-import React from "react";
 import Hamburger from "hamburger-react";
 import Button from "../../Button/Button";
+import { FC } from "react";
 
-function CtaContainer() {
+interface CtaContainerProps {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const CtaContainer: FC<CtaContainerProps> = ({ isOpen, toggleSidebar }) => {
   return (
     <div className="flex justify-end items-center gap-4 pr-5 py-4 pl-4">
       <Button
@@ -13,10 +18,15 @@ function CtaContainer() {
         textStyles="hover:underline"
       />
       <div className="min-w-10">
-        <Hamburger size={24} aria-label="Toggle menu" />
+        <Hamburger
+          size={24}
+          toggled={isOpen}
+          toggle={toggleSidebar}
+          aria-label="Toggle menu"
+        />
       </div>
     </div>
   );
-}
+};
 
 export default CtaContainer;

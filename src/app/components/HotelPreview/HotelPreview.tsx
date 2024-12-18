@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
 import RoomPreview from "./RoomPreview/RoomPreview";
 import Button from "../Button/Button";
 import { FC } from "react";
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
 
 const HotelPreview: FC = () => {
   const roomData = [
@@ -32,9 +33,26 @@ const HotelPreview: FC = () => {
       ],
     },
   ];
+
+  const firstRoomRef = useRef(null);
+  const secondRoomRef = useRef(null);
+
+  const { scrollYProgress: firstRoomScrollY } = useScroll({
+    target: secondRoomRef,
+    offset: ["start 70%", "end 20%"],
+  });
+
+  const { scrollYProgress: secondRoomScrollY } = useScroll({
+    target: secondRoomRef,
+    offset: ["start 20%", "end 0%"],
+  });
+
+  const firstRoomScale = useTransform(firstRoomScrollY, [0, 1], [1, 0.8]);
+  const secondRoomScale = useTransform(secondRoomScrollY, [0, 1], [1, 0.8]);
+
   return (
     <section>
-      <div className="px-4 pb-20 grid grid-cols-[1404px] grid-rows-3 gap-y-12">
+      <div className="px-4 pb-[72px] grid grid-rows-3 gap-y-28">
         <div className="sticky top-36">
           <div className="grid px-4 py-9 h-full">
             <div className="flex flex-col self-center justify-self-center w-[770px]">
@@ -58,15 +76,16 @@ const HotelPreview: FC = () => {
             </div>
           </div>
         </div>
-        {roomData.map(({ imageSrc, alt, title, roomFeatures }, index) => (
-          <RoomPreview
-            key={index}
-            imageSrc={imageSrc}
-            alt={alt}
-            title={title}
-            roomFeatures={roomFeatures}
-          />
-        ))}
+        <RoomPreview
+          ref={firstRoomRef}
+          scale={firstRoomScale}
+          {...roomData[0]}
+        />
+        <RoomPreview
+          ref={secondRoomRef}
+          scale={secondRoomScale}
+          {...roomData[1]}
+        />
       </div>
     </section>
   );
