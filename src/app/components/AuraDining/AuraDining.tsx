@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FC } from "react";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 const ImageCard: FC<{
   src: string;
