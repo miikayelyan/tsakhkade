@@ -4,7 +4,7 @@ import RoomPreview from "./RoomPreview/RoomPreview";
 import Button from "../Button/Button";
 import { FC } from "react";
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const HotelPreview: FC = () => {
   const roomData = [
@@ -47,8 +47,8 @@ const HotelPreview: FC = () => {
     offset: ["start 20%", "end 0%"],
   });
 
-  const firstRoomScale = useTransform(firstRoomScrollY, [0, 1], [1, 0.8]);
-  const secondRoomScale = useTransform(secondRoomScrollY, [0, 1], [1, 0.8]);
+  // const firstRoomScale = useTransform(firstRoomScrollY, [0, 1], [1, 0.8]);
+  // const secondRoomScale = useTransform(secondRoomScrollY, [0, 1], [1, 0.8]);
 
   return (
     <section>
