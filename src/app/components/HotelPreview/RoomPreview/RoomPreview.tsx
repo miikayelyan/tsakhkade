@@ -3,7 +3,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Button from "../../Button/Button";
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { forwardRef } from "react";
 
 interface Amenity {
@@ -15,7 +15,7 @@ interface RoomPreviewProps {
   alt: string;
   title: string;
   roomFeatures: Amenity[];
-  scale?: number;
+  scale?: MotionValue<number>;
 }
 
 const Amenity: FC<Amenity> = ({ description }) => (
