@@ -15,7 +15,7 @@ interface RoomPreviewProps {
   alt: string;
   title: string;
   roomFeatures: Amenity[];
-  scale?: any;
+  scale?: number;
 }
 
 const Amenity: FC<Amenity> = ({ description }) => (

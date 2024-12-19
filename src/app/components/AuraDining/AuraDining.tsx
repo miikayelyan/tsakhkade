@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { FC } from "react";
 import { useRef } from "react";
 
@@ -22,7 +22,7 @@ const ImageCard: FC<{
 );
 
 const AuraDining: FC = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
+  // const targetRef = useRef<HTMLDivElement>(null);
 
   // const { scrollYProgress } = useScroll({
   //   target: targetRef,
