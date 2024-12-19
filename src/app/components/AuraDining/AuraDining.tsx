@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { FC } from "react";
 import { useRef } from "react";
 
@@ -24,17 +24,17 @@ const ImageCard: FC<{
 const AuraDining: FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: targetRef,
+  //   offset: ["start end", "end 30%"],
+  // });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-400, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  // const y = useTransform(scrollYProgress, [0, 1], [400, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    <section className="h-[1505px] p-4 grid grid-cols-2 grid-rows-[62%_38%] bg-auraBg">
+    <motion.section className="h-[1505px] p-4 grid grid-cols-2 grid-rows-[62%_38%] bg-auraBg">
       {/* Left Section */}
-      <motion.div className="flex flex-col bg-white p-6 sm:p-[153px]">
+      <div className="flex flex-col bg-white p-6 sm:p-[153px]">
         <div className="self-center flex flex-col">
           <h2 className="font-normal text-2xl mb-36">Restaurant & Bar</h2>
           <p className="font-normal text-5xl mb-6">
@@ -45,7 +45,7 @@ const AuraDining: FC = () => {
             serves up an inspired range of dining and drinks.
           </p>
         </div>
-      </motion.div>
+      </div>
       {/* Right Top Section */}
       <motion.div className="bg-white">
         <ImageCard
@@ -68,7 +68,7 @@ const AuraDining: FC = () => {
       </motion.div>
       {/* Empty Bottom Right Section */}
       <div className="bg-white"></div>
-    </section>
+    </motion.section>
   );
 };
 

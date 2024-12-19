@@ -19,7 +19,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       >
         ✕
       </button>
-      <nav className="mt-16">
+      {/* <nav className="mt-16">
         <ul className="flex flex-col space-y-4 p-4">
           <li>
             <a href="/" className="hover:underline">
@@ -42,7 +42,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50"
