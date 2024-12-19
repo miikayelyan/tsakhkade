@@ -78,12 +78,12 @@ const HotelPreview: FC = () => {
         </div>
         <RoomPreview
           ref={firstRoomRef}
-          scale={firstRoomScale}
+          // scale={firstRoomScale}
           {...roomData[0]}
         />
         <RoomPreview
           ref={secondRoomRef}
-          scale={secondRoomScale}
+          // scale={secondRoomScale}
           {...roomData[1]}
         />
       </div>
