@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.6",
     "@supabase/supabase-js": "^2.47.8",
     "framer-motion": "^11.13.1",
     "hamburger-react": "^2.5.1",
