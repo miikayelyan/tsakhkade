@@ -7,15 +7,16 @@ import useRedirectOrScroll from "@/app/hooks/useRedirectOrScroll";
 const HotelName: FC = () => {
   const redirectOrScroll = useRedirectOrScroll();
   return (
-    <div className="flex items-center pr-4 py-4 pl-9">
-      <Link
-        href="/"
-        onClick={redirectOrScroll}
-        aria-label="Navigate to the Tsakhkadé homepage"
-        className="w-fit no-underline font-light"
-      >
-        The Tsakhkade
-      </Link>
+    <div className="flex self-stretch justify-self-stretch">
+      <div className="relative header-padding-left-section flex-grow grid grid-rows-[minmax(max-content,_100%)] grid-cols-[minmax(0px,_1fr)]">
+        <div className="self-center justify-self-start relative">
+          <p>
+            <Link href="/" onClick={redirectOrScroll}>
+              The Tsakhkade
+            </Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

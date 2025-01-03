@@ -3,7 +3,7 @@ import Hero from "../components/Hero/Hero";
 import OurStory from "../components/OurStory/OurStory";
 import HotelPreview from "../components/HotelPreview/HotelPreview";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Hero />
@@ -12,6 +12,4 @@ const Home = () => {
       <AuraDining />
     </>
   );
-};
-
-export default Home;
+}

@@ -1,32 +1,19 @@
 "use client";
 
-import Hamburger from "hamburger-react";
 import Button from "../../Button/Button";
-import { FC } from "react";
+import HamburgerMenu from "../../HamburgerMenu/HamburgerMenu";
 
-interface CtaContainerProps {
-  isOpen: boolean;
-  toggleSidebar: () => void;
-}
-
-const CtaContainer: FC<CtaContainerProps> = ({ isOpen, toggleSidebar }) => {
+export default function CtaContainer() {
   return (
-    <div className="flex justify-end items-center gap-4 pr-5 py-4 pl-4">
-      <Button
-        title="Book Now"
-        containerStyles="justify-end min-w-[82px]"
-        textStyles="hover:underline"
-      />
-      <div className="min-w-10">
-        <Hamburger
-          size={24}
-          toggled={isOpen}
-          toggle={toggleSidebar}
-          aria-label="Toggle menu"
+    <div className="flex w-auto h-auto flex-col self-stretch justify-self-stretch row-start-1 row-end-2 col-start-3 col-end-4 relative">
+      <div className="relative header-padding-right-section flex-grow grid">
+        <Button
+          title="Book Now"
+          containerStyles="mr-20 self-center justify-self-end custom_tablet:w-[100px] custom_tablet:mr-16 custom_mobile:w-[88px]"
+          textStyles="custom_tablet:text-[15px]"
         />
+        <HamburgerMenu />
       </div>
     </div>
   );
-};
-
-export default CtaContainer;
+}

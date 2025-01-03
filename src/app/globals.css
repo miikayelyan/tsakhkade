@@ -1,62 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Cormorant Garamond", serif;
-}
-
-.w-1404 {
-  @apply w-[1404px];
-}
-
-.grid-cols-1404 {
-  @apply grid-cols-[1404px];
-}
-
-.grid-rows-84 {
-  @apply grid-rows-[84px];
-}
-
-.grid-rows-248-810 {
-  @apply grid-rows-[248px_810px];
-}
-
-.px-18 {
-  @apply px-[18px];
-}
-
-.pt-18 {
-  @apply pt-[18px];
-}
-
-.mr-20 {
-  @apply mr-[20px];
-}
-
-.gap-7 {
-  @apply gap-[7px];
-}
-
-.bg-overlay {
-  position: relative;
-  z-index: 0;
-}
-
-.bg-overlay::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark background */
-  z-index: 1;
-  transition: background-color 0.3s ease;
+:root {
+  --padding-inner-multiplier: 0.0125;
+  --outer-multiplier: 0.025;
+  --padding-inner-multiplier-tablet: 0.0156256;
+  --outer-multiplier-tablet: 0.0312513;
+  --padding-inner-multiplier-mobile: 0.0205128;
+  --outer-multiplier-mobile: 0.0410256;
+  --burger-close-button-multiplier: 0.0214846;
+  --sidebar-container-margin: 0.0625;
+  --navbar-container-margin: 0.0375;
+  --scaling-factor: min((100 * 1vw), 9999px);
 }
 
 body {
-  transition: background-color 0.3s ease;
+  font-family: "EB Garamond", serif;
+}
+
+.header-padding-left-section {
+  padding: max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--outer-multiplier) * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .header-padding-left-section {
+    padding: max(
+        0.5px,
+        var(--padding-inner-multiplier-tablet) * var(--scaling-factor)
+      )
+      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
+      max(0.5px, var(--outer-multiplier-tablet) * var(--scaling-factor));
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .header-padding-left-section {
+    padding: max(
+        0.5px,
+        var(--padding-inner-multiplier-mobile) * var(--scaling-factor)
+      )
+      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
+      max(0.5px, var(--outer-multiplier-mobile) * var(--scaling-factor));
+  }
+}
+
+.header-padding-right-section {
+  padding: max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--outer-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
+    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .header-padding-right-section {
+    padding: max(
+        0.5px,
+        var(--padding-inner-multiplier-tablet) * var(--scaling-factor)
+      )
+      max(0.5px, var(--outer-multiplier-tablet) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor));
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .header-padding-right-section {
+    padding: max(
+        0.5px,
+        var(--padding-inner-multiplier-mobile) * var(--scaling-factor)
+      )
+      max(0.5px, var(--outer-multiplier-mobile) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
+      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor));
+  }
+}
+
+.burger-menu-close-button-margin {
+  margin-right: max(0.5px, var(--outer-multiplier) * var(--scaling-factor));
+  margin-top: max(
+    0.5px,
+    var(--burger-close-button-multiplier) * var(--scaling-factor)
+  );
+}
+
+.sidebar-container-margin {
+  margin-top: max(
+    0.5px,
+    var(--sidebar-container-margin) * var(--scaling-factor)
+  );
+}
+
+.navbar-container-margin {
+  margin-top: max(
+    0.5px,
+    var(--navbar-container-margin) * var(--scaling-factor)
+  );
 }

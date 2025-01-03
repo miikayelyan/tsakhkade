@@ -9,10 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        grayCustom: "rgb(112, 112, 112)",
-        cardBg: "#f0f0f0",
-        descGapBg: "#d0c9c0",
-        auraBg: "rgb(208, 201, 192)",
+        bg_primary: "rgb(240, 240, 240)",
+        navlink_bottom_border: "rgb(208, 201, 192)",
+      },
+      screens: {
+        custom_tablet: { min: "320px", max: "1000px" },
+        custom_mobile: { min: "320px", max: "750px" },
       },
     },
   },
