@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
