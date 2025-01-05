@@ -7,49 +7,30 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
-    <div
-      className={`fixed top-0 right-0 h-full w-1/2 bg-gray-800 text-white transform ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300`}
-    >
-      <button
-        onClick={toggleSidebar}
-        className="p-2 text-xl absolute top-4 right-4"
-        aria-label="Close Sidebar"
-      >
-        ✕
-      </button>
-      {/* <nav className="mt-16">
-        <ul className="flex flex-col space-y-4 p-4">
-          <li>
-            <a href="/" className="hover:underline">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/about" className="hover:underline">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/services" className="hover:underline">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="hover:underline">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav> */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50"
-          onClick={toggleSidebar}
-        />
-      )}
-    </div>
+    isOpen && (
+      <div className="h-screen fixed top-0 left-0 w-screen z-50">
+        <div className="bg-sidebar_bg w-full h-full top-0 left-0"></div>
+        <div className="absolute top-0 left-0 w-full h-full overflow-scroll">
+          <div className="w-1/2 self-stretch justify-self-end">
+            <div className="bg-bg_primary h-full left-0 absolute top-0 w-full"></div>
+            <div className="overflow-y-scroll overflow-x-hidden">
+              {/* close button */}
+              <div className="h-6 w-10 self-start justify-self-end burger-menu-close-button-margin">
+                <button
+                  type="button"
+                  aria-label="Close"
+                  className="h-full w-full"
+                >
+                  <span className="flex-row-reverse justify-center items-center flex h-full w-full text-base">
+                    Close
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   );
 };
 

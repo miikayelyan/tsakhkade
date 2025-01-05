@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import Sidebar from "../Header/CtaContainer/Sidebar";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,37 +32,7 @@ export default function HamburgerMenu() {
         </g>
       </svg>
 
-      {isOpen && (
-        <div
-          role="dialog"
-          aria-label="Site Navigation"
-          aria-modal
-          tabIndex={-1}
-          className="fixed top-0 right-0 z-50 w-1/2 h-screen bg-bg_primary grid overflow-y-hidden"
-        >
-          {/* Close Button */}
-          <div className="h-6 w-10 justify-self-end burger-menu-close-button-margin">
-            <button
-              type="button"
-              className="text-gray-700"
-              onClick={() => setIsOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-          {/* Sidebar Content */}
-          <nav className="p-6">
-            <ul>
-              <li>
-                <Link href="#">Rooms</Link>
-              </li>
-              <li>
-                <Link href="#">About</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      )}
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
     </div>
   );
 }

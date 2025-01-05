@@ -49,7 +49,7 @@ export default function Header() {
         initial={{ y: 0 }}
         animate={{ y: isHidden ? -86 : 0 }}
         transition={{ ease: "easeInOut" }}
-        className="grid grid-rows-[minmax(50px,_auto)] custom_tablet:grid-rows-[minmax(49.75px,_auto)] grid-cols-[1fr_1fr_1fr] custom_tablet:grid-cols-[1.29fr_0.42fr_1.29fr] bg-slate-50 border-b border-gray-600"
+        className="grid grid-rows-[minmax(50px,_auto)] custom_tablet:grid-rows-[minmax(49.75px,_auto)] grid-cols-[1fr_1fr_1fr] custom_tablet:grid-cols-[1.29fr_0.42fr_1.29fr] bg-white"
       >
         <HotelName />
         <HotelLogo />
