@@ -5,7 +5,7 @@ interface SidebarProps {
   toggleSidebar: () => void;
 }
 
-const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+const Sidebar: FC<SidebarProps> = ({ isOpen }) => {
   return (
     isOpen && (
       <div className="h-screen fixed top-0 left-0 w-screen z-50">
