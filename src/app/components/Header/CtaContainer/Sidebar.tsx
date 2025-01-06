@@ -1,36 +1,44 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 interface SidebarProps {
-  isOpen: boolean;
-  toggleSidebar: () => void;
+  onClose: () => void;
 }
 
-const Sidebar: FC<SidebarProps> = ({ isOpen }) => {
-  return (
-    isOpen && (
-      <div className="h-screen fixed top-0 left-0 w-screen z-50">
-        <div className="bg-sidebar_bg w-full h-full top-0 left-0"></div>
-        <div className="absolute top-0 left-0 w-full h-full overflow-scroll">
-          <div className="w-1/2 self-stretch justify-self-end">
-            <div className="bg-bg_primary h-full left-0 absolute top-0 w-full"></div>
-            <div className="overflow-y-scroll overflow-x-hidden">
-              {/* close button */}
-              <div className="h-6 w-10 self-start justify-self-end burger-menu-close-button-margin">
-                <button
-                  type="button"
-                  aria-label="Close"
-                  className="h-full w-full"
-                >
-                  <span className="flex-row-reverse justify-center items-center flex h-full w-full text-base">
-                    Close
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
+const Sidebar: FC<SidebarProps> = ({ onClose }) => {
+  useEffect(() => {
+    const portalRoot = document.getElementById("portal-root") as HTMLElement;
+    if (!portalRoot) {
+      console.error("Portal root not found");
+    }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+  return createPortal(
+    <div
+      role="dialog"
+      id="sidebar"
+      aria-modal
+      aria-labelledby="sidebar"
+      className="grid min-h-[300px] h-screen left-0 top-0 fixed w-screen bg-sidebar_bg z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="grid w-1/2 custom_mobile:w-full justify-self-end relative bg-bg_primary overflow-scroll"
+      >
+        <div className="h-6 w-10 justify-self-end burger-menu-close-button-margin">
+          <button aria-label="close sidebar" onClick={onClose}>
+            Close
+          </button>
         </div>
       </div>
-    )
+    </div>,
+    document.getElementById("portal-root") as HTMLElement
   );
 };
 
