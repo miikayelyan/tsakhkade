@@ -10,9 +10,13 @@ import { useRef } from "react";
 export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const isBrowser = typeof window !== "undefined";
-  console.log(isBrowser);
+
+  console.log(isBrowser, "isBrowser");
+
   const lastScrollYRef = useRef(isBrowser ? window.scrollY : 0);
+
   console.log(lastScrollYRef.current);
+
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {

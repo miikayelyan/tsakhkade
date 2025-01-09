@@ -12,6 +12,7 @@ export default {
         bg_primary: "#F0F0F0",
         navlink_bottom_border: "#D0C9C0",
         sidebar_bg: "rgba(0, 0, 0, 0.7)",
+        sidebar_border: "rgb(208,201,192)",
       },
       screens: {
         custom_tablet: { min: "320px", max: "1000px" },

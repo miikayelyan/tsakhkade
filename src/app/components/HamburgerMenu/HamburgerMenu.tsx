@@ -1,34 +1,32 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Sidebar from "../Header/CtaContainer/Sidebar";
 import { useEffect } from "react";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const burgerButtonRef = useRef<HTMLDivElement>(null);
 
   const toggleSidebar = () => setIsOpen((prev) => !prev);
   const closeSidebar = () => setIsOpen(false);
 
+  const baseClasses =
+    "grid w-[50px] h-[50px] self-center justify-self-end relative";
+  const tabletClasses = "custom_tablet:w-10 custom_tablet:h-10 -mr-2";
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      console.log("I am the handleKeyDown function");
       if (e.key === "Escape") closeSidebar();
     };
 
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
-    } else if (burgerButtonRef.current) {
-      burgerButtonRef.current.focus();
     }
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
-
-  const baseClasses =
-    "grid w-[50px] h-[50px] self-center justify-self-end relative";
-  const tabletClasses = "custom_tablet:w-10 custom_tablet:h-10 -mr-2";
 
   return (
     <div
@@ -37,9 +35,7 @@ export default function HamburgerMenu() {
       aria-expanded={isOpen}
       aria-controls="sidebar"
       onClick={toggleSidebar}
-      onKeyDown={(e) => e.key === "Enter" && toggleSidebar()}
       tabIndex={0}
-      ref={burgerButtonRef}
       className={`${baseClasses} ${tabletClasses} col-start-1 col-end-2 row-start-1 row-end-2`}
     >
       <svg

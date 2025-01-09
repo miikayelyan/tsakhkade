@@ -5,16 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --padding-inner-multiplier: 0.0125;
-  --outer-multiplier: 0.025;
-  --padding-inner-multiplier-tablet: 0.0156256;
-  --outer-multiplier-tablet: 0.0312513;
-  --padding-inner-multiplier-mobile: 0.0205128;
-  --outer-multiplier-mobile: 0.0410256;
-  --burger-close-button-multiplier: 0.0214846;
-  --sidebar-container-margin: 0.0625;
-  --navbar-container-margin: 0.0375;
-  --scaling-factor: min((100 * 1vw), 9999px);
+  --scaling-factor: min(100 * 1vw, 9999px);
+  --theme-spx-ratio: var(--scaling-factor) / 1280;
 }
 
 body {
@@ -22,85 +14,137 @@ body {
 }
 
 .header-padding-left-section {
-  padding: max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--outer-multiplier) * var(--scaling-factor));
+  padding: max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.025 * var(--scaling-factor));
 }
 
 @media screen and (min-width: 320px) and (max-width: 1000px) {
   .header-padding-left-section {
-    padding: max(
-        0.5px,
-        var(--padding-inner-multiplier-tablet) * var(--scaling-factor)
-      )
-      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
-      max(0.5px, var(--outer-multiplier-tablet) * var(--scaling-factor));
+    padding: max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0312513 * var(--scaling-factor));
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 750px) {
   .header-padding-left-section {
-    padding: max(
-        0.5px,
-        var(--padding-inner-multiplier-mobile) * var(--scaling-factor)
-      )
-      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
-      max(0.5px, var(--outer-multiplier-mobile) * var(--scaling-factor));
+    padding: max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0410256 * var(--scaling-factor));
   }
 }
 
 .header-padding-right-section {
-  padding: max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--outer-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor))
-    max(0.5px, var(--padding-inner-multiplier) * var(--scaling-factor));
+  padding: max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.025 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor));
 }
 
 @media screen and (min-width: 320px) and (max-width: 1000px) {
   .header-padding-right-section {
-    padding: max(
-        0.5px,
-        var(--padding-inner-multiplier-tablet) * var(--scaling-factor)
-      )
-      max(0.5px, var(--outer-multiplier-tablet) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-tablet) * var(--scaling-factor));
+    padding: max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0312513 * var(--scaling-factor))
+      max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0156256 * var(--scaling-factor));
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 750px) {
   .header-padding-right-section {
-    padding: max(
-        0.5px,
-        var(--padding-inner-multiplier-mobile) * var(--scaling-factor)
-      )
-      max(0.5px, var(--outer-multiplier-mobile) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor))
-      max(0.5px, var(--padding-inner-multiplier-mobile) * var(--scaling-factor));
+    padding: max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0410256 * var(--scaling-factor))
+      max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0205128 * var(--scaling-factor));
   }
 }
 
 .burger-menu-close-button-margin {
-  margin-right: max(0.5px, var(--outer-multiplier) * var(--scaling-factor));
-  margin-top: max(
-    0.5px,
-    var(--burger-close-button-multiplier) * var(--scaling-factor)
-  );
+  margin-right: max(0.5px, 0.02 * var(--scaling-factor));
+  margin-top: max(0.5px, 0.0214846 * var(--scaling-factor));
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  .burger-menu-close-button-margin {
+    margin-right: max(0.5px, 0.0312513 * var(--scaling-factor));
+    margin-top: max(0.5px, 0.026041 * var(--scaling-factor));
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .burger-menu-close-button-margin {
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+    margin-top: max(0.5px, 0.0512821 * var(--scaling-factor));
+  }
 }
 
 .sidebar-container-margin {
-  margin-top: max(
-    0.5px,
-    var(--sidebar-container-margin) * var(--scaling-factor)
-  );
+  margin-top: max(0.5px, 0.0625 * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .sidebar-container-margin {
+    margin-top: max(0.5px, 0.1435897 * var(--scaling-factor));
+  }
+}
+
+.sidebar-border {
+  @apply border-b border-sidebar_border;
+}
+
+.sidebar-font {
+  font: normal normal normal calc(23 * var(--theme-spx-ratio)) / 1.1em
+      "EB Garamond",
+    serif;
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  .sidebar-font {
+    font: normal normal normal max(0.5px, 0.0234375 * var(--scaling-factor)) /
+        1.1em "eb garamond",
+      serif;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .sidebar-font {
+    font: normal normal normal max(0.5px, 0.0461538 * var(--scaling-factor)) /
+        1.1em "eb garamond",
+      serif;
+  }
 }
 
 .navbar-container-margin {
-  margin-top: max(
-    0.5px,
-    var(--navbar-container-margin) * var(--scaling-factor)
-  );
+  margin-bottom: max(0.5px, 0.0375 * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .navbar-container-margin {
+    margin-bottom: max(0.5px, 0.1230769 * var(--scaling-factor));
+  }
+}
+
+.sidebar-image-margin {
+  margin-right: max(0.5px, 0.025 * var(--scaling-factor));
+  margin-bottom: max(0.5px, 0.0125 * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .sidebar-image-margin {
+    width: 41.6%;
+    margin-right: max(0.5px, 0.0312513 * var(--scaling-factor));
+    margin-bottom: max(0.5px, 0.0208333 * var(--scaling-factor));
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .sidebar-image-margin {
+    width: 31.25%;
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+    margin-bottom: max(0.5px, 0.0410256 * var(--scaling-factor));
+  }
 }

@@ -1,15 +1,15 @@
 "use client";
 
 import useRedirectOrScroll from "@/app/hooks/useRedirectOrScroll";
+import Link from "next/link";
 
 export default function HotelLogo() {
   const redirectOrScroll = useRedirectOrScroll();
 
   return (
     <div className="flex items-center justify-center self-stretch">
-      <div
-        role="button"
-        tabIndex={0}
+      <Link
+        href="/"
         onClick={redirectOrScroll}
         className="w-[38px] h-12 custom_tablet:w-[35px] custom_tablet:h-11 custom_mobile:w-[31px] custom_mobile:h-10"
       >
@@ -38,7 +38,7 @@ export default function HotelLogo() {
             ></path>
           </g>
         </svg>
-      </div>
+      </Link>
     </div>
   );
 }
