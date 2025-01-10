@@ -44,39 +44,89 @@ const Sidebar: FC<SidebarProps> = ({ onClose }) => {
             Close
           </button>
         </div>
+        {/* NavLinks */}
         <div className="flex flex-col w-full sidebar-container-margin row-start-1 col-start-1 row-end-2 col-end-2">
           <nav
             aria-label="Site"
             className="w-full grid navbar-container-margin"
           >
             <ul className="list-none">
-              <li className="py-1.5 pl-4 sidebar-border sidebar-font">
+              <li className="sidebar-list-item">
                 <Link href="#">Rooms & Suites</Link>
               </li>
-              <li className="py-1.5 pl-4 sidebar-border sidebar-font">
-                <Link href="#">The Hotel</Link>
+              <li className="sidebar-list-item">
+                <Link href="#" className="">
+                  The Hotel
+                </Link>
               </li>
-              <li className="py-1.5 pl-4 sidebar-border sidebar-font">
-                <Link href="#">Dine & Drink</Link>
+              <li className="sidebar-list-item">
+                <Link href="#" className="w-full">
+                  Dine & Drink
+                </Link>
               </li>
-              <li className="py-1.5 pl-4 sidebar-border sidebar-font">
-                <Link href="#">Amenities</Link>
+              <li className="sidebar-list-item">
+                <Link href="#" className="w-full">
+                  Amenities
+                </Link>
               </li>
-              <li className="py-1.5 pl-4 sidebar-border sidebar-font">
-                <Link href="#">Contact</Link>
+              <li className="sidebar-list-item">
+                <Link href="#" className="w-full">
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
           {/* Sidebar image */}
-          <div className="w-1/4 aspect-[1/1.4] sidebar-image-margin self-end order-2">
-            <div>
-              <Image
-                src="https://static.wixstatic.com/media/c837a6_099669c22842461184ac99b0400cbe45~mv2.jpg/v1/fill/w_360,h_504,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Our_Hotel_02.jpg"
-                width={180}
-                height={252}
-                alt="Our Hotel"
-              />
-            </div>
+          <div className="sidebar-image-width aspect-[1/1.4] sidebar-image-margin self-end order-2">
+            <Image
+              src="https://static.wixstatic.com/media/c837a6_099669c22842461184ac99b0400cbe45~mv2.jpg/v1/fill/w_360,h_504,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Our_Hotel_02.jpg"
+              width={180}
+              height={252}
+              alt="Our Hotel"
+              className="w-full h-full"
+            />
+          </div>
+          {/* Socials */}
+          <div className="h-[21px] sidebar-socials-width sidebar-socials-margin self-end order-3">
+            <ul
+              className="flex list-none h-full gap-x-2"
+              aria-label="Social Bar"
+            >
+              <li className="social">
+                <Link href="#" aria-label="Instagram" className="w-full h-full">
+                  <Image
+                    src="https://static.wixstatic.com/media/11062b_ca1d837ce7194421b781ee7384061a8e~mv2.png/v1/fill/w_42,h_42,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ca1d837ce7194421b781ee7384061a8e~mv2.png"
+                    width={42}
+                    height={42}
+                    alt="Instagram"
+                  />
+                </Link>
+              </li>
+              <li className="social">
+                <Link href="#" aria-label="Facebook" className="w-full h-full">
+                  <Image
+                    src="https://static.wixstatic.com/media/11062b_362ef89dec51403eb0ee59a21bde967c~mv2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_362ef89dec51403eb0ee59a21bde967c~mv2.png"
+                    width={42}
+                    height={42}
+                    alt="Facebook"
+                  />
+                </Link>
+              </li>
+              <li className="social">
+                <Link
+                  href="#"
+                  aria-label="TripAdvisor"
+                  className="w-full h-full"
+                >
+                  <Image
+                    src="https://static.wixstatic.com/media/11062b_d6c627039ccb4adf844cbf1d7522a1ac~mv2.png/v1/fill/w_42,h_42,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_d6c627039ccb4adf844cbf1d7522a1ac~mv2.png"
+                    width={42}
+                    height={42}
+                    alt="TripAdvisor"
+                  />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

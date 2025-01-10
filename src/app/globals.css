@@ -13,56 +13,30 @@ body {
   font-family: "EB Garamond", serif;
 }
 
-.header-padding-left-section {
+/* Header Padding */
+.header-padding-left-section,
+.header-padding-right-section {
   padding: max(0.5px, 0.0125 * var(--scaling-factor))
-    max(0.5px, 0.0125 * var(--scaling-factor))
-    max(0.5px, 0.0125 * var(--scaling-factor))
     max(0.5px, 0.025 * var(--scaling-factor));
 }
 
 @media screen and (min-width: 320px) and (max-width: 1000px) {
-  .header-padding-left-section {
+  .header-padding-left-section,
+  .header-padding-right-section {
     padding: max(0.5px, 0.0156256 * var(--scaling-factor))
-      max(0.5px, 0.0156256 * var(--scaling-factor))
-      max(0.5px, 0.0156256 * var(--scaling-factor))
       max(0.5px, 0.0312513 * var(--scaling-factor));
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 750px) {
-  .header-padding-left-section {
+  .header-padding-left-section,
+  .header-padding-right-section {
     padding: max(0.5px, 0.0205128 * var(--scaling-factor))
-      max(0.5px, 0.0205128 * var(--scaling-factor))
-      max(0.5px, 0.0205128 * var(--scaling-factor))
       max(0.5px, 0.0410256 * var(--scaling-factor));
   }
 }
 
-.header-padding-right-section {
-  padding: max(0.5px, 0.0125 * var(--scaling-factor))
-    max(0.5px, 0.025 * var(--scaling-factor))
-    max(0.5px, 0.0125 * var(--scaling-factor))
-    max(0.5px, 0.0125 * var(--scaling-factor));
-}
-
-@media screen and (min-width: 320px) and (max-width: 1000px) {
-  .header-padding-right-section {
-    padding: max(0.5px, 0.0156256 * var(--scaling-factor))
-      max(0.5px, 0.0312513 * var(--scaling-factor))
-      max(0.5px, 0.0156256 * var(--scaling-factor))
-      max(0.5px, 0.0156256 * var(--scaling-factor));
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .header-padding-right-section {
-    padding: max(0.5px, 0.0205128 * var(--scaling-factor))
-      max(0.5px, 0.0410256 * var(--scaling-factor))
-      max(0.5px, 0.0205128 * var(--scaling-factor))
-      max(0.5px, 0.0205128 * var(--scaling-factor));
-  }
-}
-
+/* Burger Menu Button Margin */
 .burger-menu-close-button-margin {
   margin-right: max(0.5px, 0.02 * var(--scaling-factor));
   margin-top: max(0.5px, 0.0214846 * var(--scaling-factor));
@@ -82,6 +56,7 @@ body {
   }
 }
 
+/* Sidebar Styles */
 .sidebar-container-margin {
   margin-top: max(0.5px, 0.0625 * var(--scaling-factor));
 }
@@ -92,20 +67,16 @@ body {
   }
 }
 
-.sidebar-border {
-  @apply border-b border-sidebar_border;
-}
-
 .sidebar-font {
   font: normal normal normal calc(23 * var(--theme-spx-ratio)) / 1.1em
       "EB Garamond",
     serif;
 }
 
-@media screen and (min-width: 750px) and (max-width: 1000px) {
+@media screen and (min-width: 320px) and (max-width: 1000px) {
   .sidebar-font {
     font: normal normal normal max(0.5px, 0.0234375 * var(--scaling-factor)) /
-        1.1em "eb garamond",
+        1.1em "EB Garamond",
       serif;
   }
 }
@@ -113,11 +84,12 @@ body {
 @media screen and (min-width: 320px) and (max-width: 750px) {
   .sidebar-font {
     font: normal normal normal max(0.5px, 0.0461538 * var(--scaling-factor)) /
-        1.1em "eb garamond",
+        1.1em "EB Garamond",
       serif;
   }
 }
 
+/* Navbar Margin */
 .navbar-container-margin {
   margin-bottom: max(0.5px, 0.0375 * var(--scaling-factor));
 }
@@ -128,17 +100,20 @@ body {
   }
 }
 
-.sidebar-image-margin {
-  margin-right: max(0.5px, 0.025 * var(--scaling-factor));
-  margin-bottom: max(0.5px, 0.0125 * var(--scaling-factor));
+/* Sidebar Image */
+.sidebar-image-width {
+  @apply w-1/4;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1000px) {
-  .sidebar-image-margin {
+  .sidebar-image-width {
     width: 41.6%;
-    margin-right: max(0.5px, 0.0312513 * var(--scaling-factor));
-    margin-bottom: max(0.5px, 0.0208333 * var(--scaling-factor));
   }
+}
+
+.sidebar-image-margin {
+  margin-right: max(0.5px, 0.025 * var(--scaling-factor));
+  margin-bottom: max(0.5px, 0.0125 * var(--scaling-factor));
 }
 
 @media screen and (min-width: 320px) and (max-width: 750px) {
@@ -147,4 +122,33 @@ body {
     margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
     margin-bottom: max(0.5px, 0.0410256 * var(--scaling-factor));
   }
+}
+
+/* Sidebar Socials */
+.sidebar-socials-width {
+  width: calc(3 * (21px + 8px) - 8px);
+}
+
+.sidebar-socials-margin {
+  margin-right: max(0.5px, 0.025 * var(--scaling-factor));
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .sidebar-socials-width {
+    width: calc(3 * (19px + 8px) - 8px);
+  }
+
+  .sidebar-socials-margin {
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+  }
+}
+
+/* Sidebar List Items */
+.sidebar-list-item {
+  @apply grid py-1.5 pl-4 border-b border-sidebar_border sidebar-font;
+}
+
+/* Social Icons */
+.social {
+  @apply w-[21px] h-[21px];
 }
