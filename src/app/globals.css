@@ -13,6 +13,10 @@ body {
   font-family: "EB Garamond", serif;
 }
 
+/* a:focus {
+  outline: 2px solid #026fc2;
+} */
+
 /* Header Padding */
 .header-padding-left-section,
 .header-padding-right-section {
@@ -145,7 +149,11 @@ body {
 
 /* Sidebar List Items */
 .sidebar-list-item {
-  @apply grid py-1.5 pl-4 border-b border-sidebar_border sidebar-font;
+  @apply border-b border-sidebar_border sidebar-font;
+}
+
+.sidebar-list-item a {
+  @apply py-1.5 pl-4;
 }
 
 /* Social Icons */

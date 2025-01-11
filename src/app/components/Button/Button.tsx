@@ -28,7 +28,10 @@ const Button: FC<ButtonProps> = ({
     tabIndex={0}
   >
     <Link href={href} className="h-full min-h-2.5 min-w-2.5 w-full">
-      <span className="flex justify-end items-center h-full w-full group">
+      <span
+        className="flex justify-end items-center h-full w-full group"
+        tabIndex={-1}
+      >
         <span
           className={`mr-1 tracking-[0.04em] text-base italic ${textStyles}`}
         >
