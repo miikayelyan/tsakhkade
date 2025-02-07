@@ -13,31 +13,32 @@ body {
   font-family: "EB Garamond", serif;
 }
 
-/* a:focus {
-  outline: 2px solid #026fc2;
-} */
+/* Header layout */
+.header {
+  @apply grid grid-rows-[minmax(50px,_auto)] custom_tablet:grid-rows-[minmax(49.75px,_auto)] grid-cols-[1fr_1fr_1fr] custom_tablet:grid-cols-[1.29fr_0.42fr_1.29fr] bg-white pointer-events-auto;
+}
 
 /* Header Padding */
-.header-padding-left-section,
-.header-padding-right-section {
+.header-padding-left-section {
   padding: max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
     max(0.5px, 0.025 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 320px) and (max-width: 1000px) {
-  .header-padding-left-section,
-  .header-padding-right-section {
-    padding: max(0.5px, 0.0156256 * var(--scaling-factor))
-      max(0.5px, 0.0312513 * var(--scaling-factor));
-  }
+.header-padding-right-section {
+  padding: max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.025 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .header-padding-left-section,
-  .header-padding-right-section {
-    padding: max(0.5px, 0.0205128 * var(--scaling-factor))
-      max(0.5px, 0.0410256 * var(--scaling-factor));
-  }
+.header-padding-middle-section {
+  padding: max(0.5px, 0.0125 * var(--scaling-factor));
+}
+
+.hotellogo-size {
+  @apply h-12 w-[38px];
 }
 
 /* Burger Menu Button Margin */
@@ -46,30 +47,12 @@ body {
   margin-top: max(0.5px, 0.0214846 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 750px) and (max-width: 1000px) {
-  .burger-menu-close-button-margin {
-    margin-right: max(0.5px, 0.0312513 * var(--scaling-factor));
-    margin-top: max(0.5px, 0.026041 * var(--scaling-factor));
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .burger-menu-close-button-margin {
-    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
-    margin-top: max(0.5px, 0.0512821 * var(--scaling-factor));
-  }
-}
-
-/* Sidebar Styles */
+/* Sidebar Margin */
 .sidebar-container-margin {
   margin-top: max(0.5px, 0.0625 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .sidebar-container-margin {
-    margin-top: max(0.5px, 0.1435897 * var(--scaling-factor));
-  }
-}
+/* Sidebar Font and Sizing */
 
 .sidebar-font {
   font: normal normal normal calc(23 * var(--theme-spx-ratio)) / 1.1em
@@ -77,20 +60,9 @@ body {
     serif;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1000px) {
-  .sidebar-font {
-    font: normal normal normal max(0.5px, 0.0234375 * var(--scaling-factor)) /
-        1.1em "EB Garamond",
-      serif;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .sidebar-font {
-    font: normal normal normal max(0.5px, 0.0461538 * var(--scaling-factor)) /
-        1.1em "EB Garamond",
-      serif;
-  }
+/* Sidebar Image Size */
+.sidebar-image-width {
+  @apply w-1/4;
 }
 
 /* Navbar Margin */
@@ -98,34 +70,9 @@ body {
   margin-bottom: max(0.5px, 0.0375 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .navbar-container-margin {
-    margin-bottom: max(0.5px, 0.1230769 * var(--scaling-factor));
-  }
-}
-
-/* Sidebar Image */
-.sidebar-image-width {
-  @apply w-1/4;
-}
-
-@media screen and (min-width: 320px) and (max-width: 1000px) {
-  .sidebar-image-width {
-    width: 41.6%;
-  }
-}
-
 .sidebar-image-margin {
   margin-right: max(0.5px, 0.025 * var(--scaling-factor));
   margin-bottom: max(0.5px, 0.0125 * var(--scaling-factor));
-}
-
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .sidebar-image-margin {
-    width: 31.25%;
-    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
-    margin-bottom: max(0.5px, 0.0410256 * var(--scaling-factor));
-  }
 }
 
 /* Sidebar Socials */
@@ -137,16 +84,6 @@ body {
   margin-right: max(0.5px, 0.025 * var(--scaling-factor));
 }
 
-@media screen and (min-width: 320px) and (max-width: 750px) {
-  .sidebar-socials-width {
-    width: calc(3 * (19px + 8px) - 8px);
-  }
-
-  .sidebar-socials-margin {
-    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
-  }
-}
-
 /* Sidebar List Items */
 .sidebar-list-item {
   @apply border-b border-sidebar_border sidebar-font;
@@ -156,7 +93,129 @@ body {
   @apply py-1.5 pl-4;
 }
 
-/* Social Icons */
+/* Sidebar Social Icons */
 .social {
   @apply w-[21px] h-[21px];
+}
+
+/* Hero Padding */
+
+.hero-padding {
+  padding: max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor))
+    max(0.5px, 0.025 * var(--scaling-factor))
+    max(0.5px, 0.0125 * var(--scaling-factor));
+}
+
+.hero-context-padding {
+  padding: max(0.5px, 0.1031256 * var(--scaling-factor)) 0
+    max(0.5px, 0.0312513 * var(--scaling-factor)) 0;
+}
+
+.hero-title-margin-bottom {
+  margin-bottom: max(0.5px, 0.009375 * var(--scaling-factor));
+}
+
+/* Hero Text Sizing */
+
+.hero-title-font-size {
+  font-size: max(0.5px, 0.04375 * var(--scaling-factor));
+}
+
+.hero-slogan-font-size {
+  letter-spacing: -0.02em;
+  font-size: max(18px, calc(23 * var(--theme-spx-ratio)));
+}
+
+/* Hero Layout */
+
+.hero-grid-rows {
+  grid-template-rows:
+    minmax(max(0.5px, 0.2062513 * var(--scaling-factor), auto))
+    minmax(max(0.5px, 0.5625 * var(--scaling-factor), auto));
+}
+
+/* Responsiveness */
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .header-padding-left-section,
+  .header-padding-right-section {
+    padding: max(0.5px, 0.0156256 * var(--scaling-factor))
+      max(0.5px, 0.0312513 * var(--scaling-factor));
+  }
+
+  .header-padding-middle-section {
+    padding: max(0.5px, 0.0156256 * var(--scaling-factor));
+  }
+
+  .sidebar-font {
+    font: normal normal normal max(0.5px, 0.0234375 * var(--scaling-factor)) /
+        1.1em "EB Garamond",
+      serif;
+  }
+
+  .sidebar-image-width {
+    width: 41.6%;
+  }
+
+  .hero-content-padding {
+    padding: max(0.5px, 0.2604179 * var(--scaling-factor)) 0
+      max(0.5px, 0.0625 * var(--scaling-factor)) 0;
+  }
+
+  .hotellogo-size {
+    @apply w-[35px] h-11;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+  .header-padding-left-section,
+  .header-padding-right-section {
+    padding: max(0.5px, 0.0205128 * var(--scaling-factor))
+      max(0.5px, 0.0410256 * var(--scaling-factor));
+  }
+
+  .hotellogo-size {
+    @apply w-[31px] h-10;
+  }
+
+  .sidebar-socials-width {
+    width: calc(3 * (19px + 8px) - 8px);
+  }
+
+  .sidebar-socials-margin {
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+  }
+
+  .burger-menu-close-button-margin {
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+    margin-top: max(0.5px, 0.0512821 * var(--scaling-factor));
+  }
+
+  .sidebar-container-margin {
+    margin-top: max(0.5px, 0.1435897 * var(--scaling-factor));
+  }
+
+  .sidebar-font {
+    font: normal normal normal max(0.5px, 0.0461538 * var(--scaling-factor)) /
+        1.1em "EB Garamond",
+      serif;
+  }
+
+  .navbar-container-margin {
+    margin-bottom: max(0.5px, 0.1230769 * var(--scaling-factor));
+  }
+
+  .sidebar-image-margin {
+    width: 31.25%;
+    margin-right: max(0.5px, 0.0410256 * var(--scaling-factor));
+    margin-bottom: max(0.5px, 0.0410256 * var(--scaling-factor));
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  .burger-menu-close-button-margin {
+    margin-right: max(0.5px, 0.0312513 * var(--scaling-factor));
+    margin-top: max(0.5px, 0.026041 * var(--scaling-factor));
+  }
 }

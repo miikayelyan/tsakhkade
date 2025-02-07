@@ -29,6 +29,7 @@ const Sidebar: FC<SidebarProps> = ({ onClose }) => {
         {/* Close Button */}
         <div className="h-6 w-10 col-start-1 row-start-1 col-end-2 row-end-2 justify-self-end burger-menu-close-button-margin">
           <button
+            role="button"
             id="close-btn"
             aria-label="close sidebar"
             onClick={onClose}

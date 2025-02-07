@@ -1,11 +1,11 @@
 "use client";
 
 import Button from "../../Button/Button";
-import HamburgerMenu from "../../HamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 
 export default function CtaContainer() {
   return (
-    <div className="flex w-auto h-auto flex-col self-stretch justify-self-stretch row-start-1 row-end-2 col-start-3 col-end-4 relative">
+    <div className="flex flex-col">
       <div className="relative header-padding-right-section flex-grow grid">
         <Button
           title="Book Now"

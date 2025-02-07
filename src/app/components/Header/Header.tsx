@@ -11,16 +11,11 @@ export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const isBrowser = typeof window !== "undefined";
 
-  // console.log(isBrowser, "isBrowser");
-
   const lastScrollYRef = useRef(isBrowser ? window.scrollY : 0);
-
-  // console.log(lastScrollYRef.current);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // console.log("scroll function trigger");
     const initialScrollY = isBrowser ? window.scrollY : 0;
     if (initialScrollY > 0) setIsHidden(true);
 
@@ -48,12 +43,12 @@ export default function Header() {
   }, [isBrowser]);
 
   return (
-    <div className="fixed w-full h-full z-50">
+    <div className="fixed pointer-events-none top-0 left-0 w-full h-full z-50">
       <motion.header
         initial={{ y: 0 }}
         animate={{ y: isHidden ? -86 : 0 }}
         transition={{ ease: "easeInOut" }}
-        className="grid grid-rows-[minmax(50px,_auto)] custom_tablet:grid-rows-[minmax(49.75px,_auto)] grid-cols-[1fr_1fr_1fr] custom_tablet:grid-cols-[1.29fr_0.42fr_1.29fr] bg-white"
+        className="header"
       >
         <HotelName />
         <HotelLogo />

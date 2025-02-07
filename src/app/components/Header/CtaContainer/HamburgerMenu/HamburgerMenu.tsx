@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Sidebar from "../Header/CtaContainer/Sidebar";
+import Sidebar from "../Sidebar";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
