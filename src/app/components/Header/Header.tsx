@@ -11,16 +11,16 @@ export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const isBrowser = typeof window !== "undefined";
 
-  console.log(isBrowser, "isBrowser");
+  // console.log(isBrowser, "isBrowser");
 
   const lastScrollYRef = useRef(isBrowser ? window.scrollY : 0);
 
-  console.log(lastScrollYRef.current);
+  // console.log(lastScrollYRef.current);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    console.log("scroll function trigger");
+    // console.log("scroll function trigger");
     const initialScrollY = isBrowser ? window.scrollY : 0;
     if (initialScrollY > 0) setIsHidden(true);
 

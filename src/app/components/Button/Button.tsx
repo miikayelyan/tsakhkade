@@ -25,7 +25,6 @@ const Button: FC<ButtonProps> = ({
     {...motionProps}
     className={`h-6 w-40 relative col-start-1 col-end-2 row-start-1 row-end-2 ${containerStyles}`}
     role="button"
-    tabIndex={0}
   >
     <Link href={href} className="h-full min-h-2.5 min-w-2.5 w-full">
       <span
